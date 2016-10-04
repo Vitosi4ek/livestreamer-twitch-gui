@@ -61,5 +61,22 @@ module.exports = {
 			"build/package/win64installer/installer.nsi":
 				"build/resources/package/wininstaller/installer.nsi.tpl"
 		}
+	},
+
+	"bintray": {
+		"options": {
+			"data": {
+				"subject": process.env.BINTRAY_SUBJECT || "",
+				"repo_deb": process.env.BINTRAY_REPO_DEB || "",
+				"repo_rpm": process.env.BINTRAY_REPO_RPM || "",
+				"name": "<%= package.name %>",
+				"version": "<%= package.version %>",
+				"dirdist": "<%= dir.dist %>"
+			}
+		},
+		"files": {
+			"build/package/bintray/deb.json": "build/resources/package/deb/bintray.json",
+			"build/package/bintray/rpm.json": "build/resources/package/rpm/bintray.json"
+		}
 	}
 };

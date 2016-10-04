@@ -22,4 +22,5 @@ nbproject
 /build/*
 !/build/tasks
 !/build/resources
+!/build/travis
 /dist/

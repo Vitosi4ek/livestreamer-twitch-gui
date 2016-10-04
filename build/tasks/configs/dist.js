@@ -55,24 +55,24 @@ module.exports = {
 	linux32deb: {
 		platform: "linux32",
 		tasks: [ "fpm:deb32" ],
-		file: "<%= fpm.deb32.options.p %>"
+		after: [ "template:bintray" ]
 	},
 
 	linux64deb: {
 		platform: "linux64",
 		tasks: [ "fpm:deb64" ],
-		file: "<%= fpm.deb64.options.p %>"
+		after: [ "template:bintray" ]
 	},
 
 	linux32rpm: {
 		platform: "linux32",
 		tasks: [ "fpm:rpm32" ],
-		file: "<%= fpm.rpm32.options.p %>"
+		after: [ "template:bintray" ]
 	},
 
 	linux64rpm: {
 		platform: "linux64",
 		tasks: [ "fpm:rpm64" ],
-		file: "<%= fpm.rpm64.options.p %>"
+		after: [ "template:bintray" ]
 	}
 };
