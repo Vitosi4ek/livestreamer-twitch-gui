@@ -81,6 +81,8 @@ module.exports = function( grunt ) {
 		var checksumTargets = targets.filter(function( target ) {
 			return config[ target ].hasOwnProperty( "file" );
 		});
-		grunt.task.run( "checksum:" + checksumTargets.join( ":" ) );
+		if ( checksumTargets.length ) {
+			grunt.task.run( "checksum:" + checksumTargets.join( ":" ) );
+		}
 	});
 };
